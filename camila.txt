@@ -1,0 +1,23 @@
+import javax.swing.JOptionPane;
+public class ServicioMilitar {
+
+    public static void main(String[] args) {
+        String nombre = JOptionPane.showInputDialog ( null, "Ingrese el Nombre", "recolección de Datos", 2);
+        int año = Integer.parseInt(JOptionPane.showInputDialog ( null, "Ingrese año de nacimiento", "recolección de Datos"));
+        String genero = JOptionPane.showInputDialog ( null, "Ingrese el genero", "recolección de Datos", 2);
+        String nacionalidad = JOptionPane.showInputDialog (null,"Ingrese nacionalidad", "recolección de Datos");
+        
+        boolean esMasculino = genero.equalsIgnoreCase("Masculino");
+        boolean esMayorDeEdad = (2023 - año) > 17;
+        boolean esColombiano = nacionalidad.equalsIgnoreCase("Colombiano");
+        
+        if(esMasculino && esMayorDeEdad && esColombiano) {
+            JOptionPane.showMessageDialog(null, nombre + "Es apto(a) para prestar servicio militar");
+        } else {
+            JOptionPane.showMessageDialog(null, nombre + "NO es apto(a) para prestar servicio militar"); 
+        }
+        
+        
+    }
+    
+}
